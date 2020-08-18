@@ -1,17 +1,17 @@
-# Deprecation Warning
+# go-spiffe (v2) Examples
 
-__NOTE:__ The code samples in this directory were written for the [v1 version](../README.md) of the go-spiffe library, which will be deprecated soon.
-
-We recommend that you write new code using the `v2` go-spiffe module. See [go-spiffe (v2) Examples](../v2/examples) for code samples written for the `v2` go-spiffe module. See [go-spiffe (v2)](../v2) for general information about the `v2` go-spiffe module.
-
-# Examples
-
-This section contains a set of standalone examples that demonstrate different use cases for the `v1` go-spiffe library.
+This section contains a set of standalone examples that demonstrate different use cases for the go-spiffe library.
 
 ## Use cases
 
-- [SVIDs for mTLS connections](./svid-mTLS): _Get automatically rotated X.509 SVIDs for your workloads and use it to establish mTLS connections between them._
+- [Mutually Authenticated TLS (mTLS)](spiffe-tls/README.md): _Establish mTLS connections between workloads using automatically rotated X.509 SVIDs obtained from the SPIFFE Workload API._
 
-- [SVIDs stream](./svid-watcher): _Get automatically rotated X.509 SVIDs for your workload._
+- [SVIDs stream](spiffe-watcher/README.md): _Get automatically rotated X.509 SVIDs and JWT Bundles for your workload._
 
-- [gRPC client](./svid-grpc-client): _Creates a gRPC SPIFFE client and access the different methods of the [Workload API](../proto/spiffe/workload/workload.proto)._
+- [gRPC over mTLS](spiffe-grpc/README.md): _Send gRPC requests between workloads over mTLS using automatically rotated X.509 SVIDs obtained from the SPIFFE Workload API._ 
+
+- [HTTP over mTLS](spiffe-http/README.md): _Send HTTP requests between workloads over mTLS using automatically rotated X.509 SVIDs obtained from the SPIFFE Workload API._ 
+
+- [HTTP over TLS with JWT and X.509 SVIDs](spiffe-jwt/README.md): _Send HTTP requests between workload over a TLS + JWT authentication using automatically rotated X.509 SVIDs and JWT SVIDs from the SPIFFE Workload API._
+
+- [HTTP over TLS with JWT SVIDs only](spiffe-jwt-using-proxy/README.md): _Authenticate client workloads to the server using JWT-SVIDs sent over TLS-encrypted HTTP connections to handle environments in which a proxy or load balancer would prevent the transmission of X.509-SVIDs over mTLS._
